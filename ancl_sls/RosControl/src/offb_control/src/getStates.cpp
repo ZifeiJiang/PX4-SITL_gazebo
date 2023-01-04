@@ -200,7 +200,7 @@ int main(int argc, char **argv){
         actu0.controls[0] = saturate<double>(controller_output[1]/(1.8383), -1, 1);
         actu0.controls[1] = saturate<double>(controller_output[2]/(1.8383), -1, 1);
         // actu0.controls[2] = saturate<double>(controller_output[3]/(190910*1), -1, 1);
-        actu0.controls[2] = saturate<double>(controller_output[3]/(190910), -1, 1);
+        actu0.controls[2] = saturate<double>(controller_output[3]/(0.9546), -1, 1);
         actu0.controls[3] = (controller_output[0]-16.67122)/20 + 0.8168;
         Eigen::Vector4d UU(wrench0.wrench.force.z, wrench1.wrench.force.z, wrench2.wrench.force.z, wrench3.wrench.force.z);
         Eigen::Vector4d UU0(controller_output[1], controller_output[2], controller_output[3], controller_output[0]);
