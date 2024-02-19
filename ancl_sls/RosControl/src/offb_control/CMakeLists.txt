@@ -156,7 +156,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(offb_control_node src/offb_node.cpp)
 add_executable(get_states_node src/getStates.cpp)
-add_executable(sub_gazebo_wrench_node src/SubGazeboWrench.cpp)
+# add_executable(sub_gazebo_wrench_node src/SubGazeboWrench.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -176,13 +176,10 @@ add_executable(sub_gazebo_wrench_node src/SubGazeboWrench.cpp)
 target_link_libraries(offb_control_node ${catkin_LIBRARIES})
 target_link_libraries(get_states_node ${catkin_LIBRARIES})
 
-add_subdirectory(src/QuasiController)
-add_subdirectory(src/QuasiControllerTrack)
 add_subdirectory(src/LinearController)
-target_link_libraries(get_states_node quasicontrol linearcontrol quasicontroltrack)
-target_link_libraries(sub_gazebo_wrench_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+target_link_libraries(get_states_node linearcontrol)
 
-# target_link_directories(get_states_node PUBLIC src/QuasiController/)
+
 # target_link_directories(test PUBLIC libs/)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
@@ -192,7 +189,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 #############
 
 # all install targets should use catkin DESTINATION variables
-# See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+# See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.htmlf
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination

@@ -1,4 +1,4 @@
-cd ~/coderepo/PX4-Autopilot
+cd ~/sls_course/PX4-Autopilot
 source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
 source /usr/share/gazebo-11/setup.bash
 source $(pwd)/build/px4_sitl_default/build_gazebo/devel/setup.bash
